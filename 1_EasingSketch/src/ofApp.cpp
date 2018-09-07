@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+       //Easing::plot();//ofSetWindowShape(640, 1600);ofBackground(0, 0, 0);
     ofSetWindowShape(740, 860);
     ofBackground(224,215,205);
     ofEnableSmoothing();
