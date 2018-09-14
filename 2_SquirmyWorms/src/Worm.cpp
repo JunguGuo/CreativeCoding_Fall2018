@@ -150,7 +150,6 @@ Spring::Spring(Bob* a_, Bob* b_, int l){
     
 }
 Spring::Spring(){
-    k = 0.5;
 }
 void Spring::update() {
     // Vector pointing from anchor to bob position

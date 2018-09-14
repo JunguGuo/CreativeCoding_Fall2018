@@ -4,7 +4,9 @@
 //
 //  Created by 俊谷郭 on 9/14/18.
 //
+//  Adapated from Nature of Code Spring Array Example. Click to attrack the worms.
 
+#pragma once
 #include "ofMain.h"
 
 
@@ -53,7 +55,7 @@ public:
     
     // Rest length and spring constant
     float len;
-    float k = 0.5;
+    float k = 0.2;
     
     Bob* a;
     Bob* b;

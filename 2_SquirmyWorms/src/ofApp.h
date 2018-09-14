@@ -20,7 +20,7 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-    Worm worms[50];
+    Worm worms[50]; //using vector would crash, not sure why
 
 //    Worm w = Worm(ofPoint(ofRandom(0,ofGetWidth()),ofRandom(0,ofGetHeight())));
 };
