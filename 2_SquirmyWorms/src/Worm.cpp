@@ -68,20 +68,20 @@ void Worm::display(){
     }
       ofSetColor(col);
         ofSetLineWidth(10);
-    for (int i = 0;i<bobs.size()-1;i++) {
-        bobs[i].display();
-        ofDrawLine(bobs[i].position.x, bobs[i].position.y, bobs[i+1].position.x, bobs[i+1].position.y);
-    }
-  
-//    ofSetLineWidth(10);
-//    ofNoFill();
-//    ofBeginShape();
-//    ofCurveVertex(bobs[0].position.x,  bobs[0].position.y);
-//    for(int i =0;i<bobs.size();i++){
-//        ofCurveVertex(bobs[i].position.x, bobs[i].position.y);
+//    for (int i = 0;i<bobs.size()-1;i++) {
+//        bobs[i].display();
+//        ofDrawLine(bobs[i].position.x, bobs[i].position.y, bobs[i+1].position.x, bobs[i+1].position.y);
 //    }
-//    ofCurveVertex(bobs[bobs.size()-1].position.x,  bobs[bobs.size()-1].position.y);
-//    ofEndShape();
+//
+    ofSetLineWidth(2);
+    ofNoFill();
+    ofBeginShape();
+    ofCurveVertex(bobs[0].position.x,  bobs[0].position.y);
+    for(int i =0;i<bobs.size();i++){
+        ofCurveVertex(bobs[i].position.x, bobs[i].position.y);
+    }
+    ofCurveVertex(bobs[bobs.size()-1].position.x,  bobs[bobs.size()-1].position.y);
+    ofEndShape();
     
 }
 
