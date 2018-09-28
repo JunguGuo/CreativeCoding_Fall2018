@@ -12,6 +12,7 @@ Worm::Worm(ofPoint pos){
     initPosition = pos;
     
     Bob b = Bob(pos.x,pos.y);
+    b.id = 0;
     bobs.push_back(b);
     float initRot = ofRandom(360);
     
@@ -23,10 +24,10 @@ Worm::Worm(ofPoint pos){
         b.id = i;
         bobs.push_back(b);
     }
-    for (int i = 0; i < bobSize-1; i++) {
-        Spring s = Spring(&bobs[i], &bobs[i+1],10);
-        springs.push_back(s);
-    }
+//    for (int i = 0; i < bobSize-1; i++) {
+//        Spring s = Spring(&bobs[i], &bobs[i+1],10);
+//        springs.push_back(s);
+//    }
     
     int r = ofRandom(5);
     ofColor cols[] = {ofColor(233,139,40),ofColor::fromHex(0x3a97c6),ofColor::fromHex(0x40ac7e),ofColor::fromHex(0x9971a8),ofColor::fromHex(0xce512f)};
@@ -35,10 +36,10 @@ Worm::Worm(ofPoint pos){
     
 }
 void Worm::update(){
-    for (Spring& s : springs) {
-        s.update();
-        
-    }
+//    for (Spring& s : springs) {
+//        s.update();
+//
+//    }
  
     
     for (int i =0;i<bobs.size();i++) {
@@ -57,7 +58,7 @@ void Worm::update(){
     
     ofPoint dir =target -bobs[0].position;
     bobs[0].applyForce(dir*0.1);
-//    bobs[0].velocity.scale( ofClamp(bobs[0].velocity.length(), 0.0, 0.0)  );
+    //bobs[0].velocity.scale( ofClamp(bobs[0].velocity.length(), 0.0, 5.0)  );
 
     
 }

@@ -65,8 +65,6 @@ public:
     Spring();
     // Calculate spring force
     void update();
-    
-    
     void display();
 };
 
