@@ -8,14 +8,11 @@ void ofApp::setup(){
 ofEnableSmoothing();
     ofSetCurveResolution(50);
     for(int i =0;i<50;i++){
-           Worm w = Worm(ofPoint(ofRandom(ofGetWidth()),ofRandom(ofGetHeight())));
-        worms.push_back(w);
-        // loop through the bobs
-        for(int j = 0; j < worms[i].bobs.size()-1;j++){
-            Spring s = Spring(&worms[i].bobs[j], &worms[i].bobs[j+1],10);
-            springs.push_back(s);
-        }
-        //worms.push_back(w);
+        worms.push_back(Worm(ofPoint(ofRandom(ofGetWidth()),ofRandom(ofGetHeight()))));
+        //improtant: the follwoing would crash because '.push_back;  push a copy of object into the vector, and since we have pointer inside the origional object this would lead to  a shallow copy
+        
+//        Worm w = Worm(ofPoint(ofRandom(ofGetWidth()),ofRandom(ofGetHeight())));
+//        worms.push_back(w);
       
     }
 }
@@ -23,10 +20,10 @@ ofEnableSmoothing();
 //--------------------------------------------------------------
 void ofApp::update(){
     
-    for (Spring& s : springs) {
-        s.update();
-
-    }
+//    for (Spring& s : springs) {
+//        s.update();
+//
+//    }
 //
 //    for (Bob& b : bobs) {
 //        b.update();
